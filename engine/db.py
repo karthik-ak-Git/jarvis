@@ -9,3 +9,5 @@ cursor.execute(query)
 # query = "INSERT INTO website_commands(name,url) VALUES ('youtube','https://www.youtube.com')"
 # cursor.execute(query)
 # con.commit()
+
+# system_commands
