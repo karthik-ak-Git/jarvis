@@ -44,4 +44,16 @@ $(document).ready(function () {
         $("#SiriWave").attr("hidden", false);
         eel.allCommands();
     });
+
+    //hodward key to activate the assistant
+    function doc_keyUp(e) {
+        if (e.key === 'j' && e.metaKey) {
+            eel.playAssisteantSound()
+            $("#Oval").attr("hidden", true);
+            $("#SiriWave").attr("hidden", false);
+            eel.allCommands();
+        }
+    }
+    document.addEventListener('keyup', doc_keyUp, true);
+
 });
