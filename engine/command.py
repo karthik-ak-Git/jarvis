@@ -12,6 +12,7 @@ def speak(text):
     engine.setProperty('rate', 174)
     eel.DisplayMessage(text)
     engine.say(text)
+    eel.recieverText(text)
     engine.runAndWait()
 
 
@@ -39,9 +40,19 @@ def takeCommand():
 
 
 @eel.expose
-def allCommands():
-    try:
+def allCommands(message=1):
+
+    if message == 1:
         query = takeCommand()
+        print(query)
+        eel.senderText(query)
+    else:
+        query = message
+        eel.senderText(query)
+
+    try:
+        # Don't overwrite the query if it's already set
+        # query = takeCommand()  # This line was causing the issue
 
         if "open" in query:
             from engine.features import opencommand
@@ -67,7 +78,7 @@ def allCommands():
 
                 whatsApp(contact_no, query, flag, name)
         else:
-            print("not opening")
+            print("not opening the command: " + query)
 
     except:
         print("error")

@@ -56,4 +56,54 @@ $(document).ready(function () {
     }
     document.addEventListener('keyup', doc_keyUp, true);
 
+    function PlayAssistant(message) {
+
+        if (message != "") {
+
+            $("#Oval").attr("hidden", true);
+            $("#SiriWave").attr("hidden", false);
+            eel.allCommands(message);
+            $("#chatbox").val("")
+            $("#MicBtn").attr("hidden", false);
+            $("#SendBtn").attr("hidden", true);
+
+        }
+    }
+
+    function showHideButton(message) {
+        if (message.length == 0) {
+            $("#MicBtn").attr("hidden", false);
+            $("#SendBtn").attr("hidden", true);
+        }
+        else {
+            $("#MicBtn").attr("hidden", true);
+            $("#SendBtn").attr("hidden", false);
+        }
+    }
+
+    $("#chatbox").keyup(function (e) {
+        let message = $("#chatbox").val();
+        showHideButton(message);
+
+        // Submit message when Enter key is pressed
+        if (e.keyCode === 13) {
+            PlayAssistant(message);
+        }
+    });
+
+    $("#SendBtn").click(function () {
+
+        let message = $("#chatbox").val();
+        PlayAssistant(message);
+    });
+
+    $("#chatbox").keypress(function (e) {
+        key = e.which;
+
+        if (key == 13) {
+            let message = $("#chatbox").val();
+            PlayAssistant(message)
+        }
+    });
+
 });
