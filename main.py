@@ -1,6 +1,6 @@
 import eel
-
 import os
+from engine.command import *
 from engine.features import *
 
 eel.init('www')
