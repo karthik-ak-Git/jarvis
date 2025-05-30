@@ -78,7 +78,8 @@ def allCommands(message=1):
 
                 whatsApp(contact_no, query, flag, name)
         else:
-            print("not opening the command: " + query)
+            from engine.features import chatBot
+            chatBot(query)
 
     except:
         print("error")

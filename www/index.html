@@ -68,13 +68,17 @@
         </section>
 
         <section id="SiriWave" class="mb-4" hidden>
-
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="d-flex justify-content-center align-items-center " style="height: 100vh;">
-                            <div class="">
-                                <p class="text-start text-light mb-4 fs-2 siri-message">Hello, iam jarvis</p>
+                        <div style="height: 100vh; display: flex; flex-direction: column;">
+                            <!-- Text content aligned to the left -->
+                            <div class="text-left mb-1 mt-5">
+                                <p class="text-light fs-2 siri-message">Hello, iam jarvis</p>
+                            </div>
+
+                            <!-- SiriWave centered -->
+                            <div class="d-flex justify-content-center">
                                 <div id="siri-container"></div>
                             </div>
                         </div>

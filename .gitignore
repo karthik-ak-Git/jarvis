@@ -2,3 +2,4 @@
 alexa.db
 /engine/__pycache__
 contacts.csv
+/engine/cookies.json
