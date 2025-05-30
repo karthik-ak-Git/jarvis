@@ -1,7 +1,9 @@
 import eel
 
+import os
+
 eel.init('www')
 
-# Use Eel's built-in functionality to launch the app in Edge
-# The 'edge' mode will launch Edge in app mode
-eel.start('index.html', mode='edge', host='localhost', port=8000, block=True)
+os.system('start msedge.exe --app="http://localhost:8000/index.html"')
+
+eel.start("index.html", mode=None, host='localhost', block=True)
