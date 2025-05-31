@@ -1,6 +1,5 @@
 import os
 import re
-from shlex import quote
 import sqlite3
 import struct
 import subprocess
